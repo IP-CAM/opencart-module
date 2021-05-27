@@ -1,87 +1,86 @@
 # Checkout Transparente PayPal para OpenCart 2 e 3
 ![](https://raw.githubusercontent.com/wiki/paypal/PayPal-PHP-SDK/images/homepage.jpg)
 
-A experiência de um Checkout Transparente processado com a segurança do PayPal. Seu cliente fará o pagamento diretamente no seu site, sem redirecionamento e sem a necessidade de abertura de uma conta PayPal, utilizando apenas os dados do cartão de crédito, que poderão ser salvos para agilizar o pagamento de futuras compras.
+The experience of a transparent checkout processed with PayPal security. Your client will pay directly on your site, without redirection and without the need to open a PayPal account, using only credit card data, which can be saved to Streamline the payment of future purchases.
 
 
-## Requisitos
+## Requirements
 
-Para o correto funcionamento da solução, é necessário verificar se a sua loja e servidor suportam alguns recursos:
-1. Sua loja precisa ter suporte aos campos personalizados CPF (tipo Conta) e Número (tipo Endereço), portanto antes de ativar a solução garanta que a sua loja está devidamente configurada para suportar estes campos;
-2. O servidor precisa ter suporte à PHP 7.3 ou superior;
-3. O servidor precisa ter suporte à TLS 1.2 ou superior e HTTPS 1.1 [(Referência Oficial)](https://www.paypal.com/sg/webapps/mpp/tls-http-upgrade).
+For the correct solution of the solution, you need to check if your store and server support some features:
+1. Your store needs to support CPF Custom Fields and Number (Address Type), so before activating the solution ensure that your store is properly configured to support these fields;
+2. The server needs to support PHP 7.3 or higher;
+3. The server needs to support TLS 1.2 or higher and HTTPS 1.1 [(official reference)] (https://www.paypal.com/sg/webapps/mpp/tls-http-upgrade).
 
-## Checkout Transparente (PayPal Plus)
+## Transparent Checkout (Paypal Plus)
 
-O Checkout Transparente está disponível apenas para contas PayPal cadastradas com CNPJ (Conta Empresa), caso a sua conta seja de pessoa física, você deve abrir uma conta PayPal de pessoa jurídica por este [link](https://www.paypal.com/bizsignup/).
+Transparent checkout is only available for paypal accounts registered with CNPJ (Company Account), if your account is from a physical person, you must open a Legal Personal account by this [link] (https://www.paypal.com / bizsignup /).
 
-A solução requer aprovação comercial, entre em contato pelo 0800 721 6959 e solicite agora mesmo.
+The solution requires commercial approval, contact by 0800 721 6959 and ask now.
 
-***O Checkout Transparente só irá funcionar caso tenha sido aprovado pelo PayPal.**
+*** Transparent checkout will only work if it has been approved by PayPal. **
 
-## Compatibilidade
+## Compatibility
 
-Este módulo é compatível com OpenCart versões **2.0.1.1 até 3.0.3.7**.
+This module is compatible with OpenCart versions ** 2.0.1.1 up to 3.0.3.7 **.
 
-## Instalação
+## Installation
 
-1. Faça o download do módulo compatível com a sua versão do OpenCart, depois acesse a administração da sua loja;
-2. Vá ao menu **Extensões→Instalador**, clique no botão "**Upload**", localize o arquivo que você baixou, e aguarde a conclusão da instalação automática;
-3. Vá ao menu **Extensões→Modificações** e clique no botão "**Atualizar**";
-4. No OpenCart 3, vá ao menu **Painel de controle**, no lado direito da tela abaixo do botão "**Sair**", clique no botão na cor azul com o desenho de uma engrenagem branca nele, no modal clique nos dois botões na cor laranja que estão dentro da coluna "**Ação**" para atualizar o cache do tema;
-5. Vá ao menu **Extensões→Pagamentos** (nas versões 2.3 ou superior vá ao menu **Extensões→Extensões** e filtre por **Pagamentos**), localize a extensão "**PayPal Plus**", clique no botão "**Instalar**", depois no botão "**Editar**", preencha os campos e clique no botão "**Salvar**".
+1. Download the module compatible with your version of Opencart, then access the administration of your store;
+2. Go to the menu ** Extensions → Installer **, click the "** Upload **" button, locate the file you downloaded, and wait for the automatic installation completion;
+3. Go to the menu ** Extensions → Modifications ** and click the "** update **" button;
+4. In OpenCart 3, go to the menu ** Control panel **, on the right side of the screen below the "** Exit **" button, click the button in blue color with the drawing of a white gear on it, in the modal Click on both orange buttons that are inside the column "** Action **" to update the theme cache;
+5. Go to the menu ** Extensions → Payments ** (in versions 2.3 or higher Go to the menu ** Extensions → Extensions ** and Filter by ** Payments **), locate the extension "** Paypal Plus **" Click the "** install **" button, then the "** edit **" button, fill in the fields and click the "** Save **" button.
 
-## Configuração
-### - Credenciais de API
-Para configurar a solução PayPal Plus, você deverá gerar as credenciais de API do tipo REST, no caso o Client ID e o Secret ID.
+## Settings
+### - API credentials
+To configure the PAYPAL PLUS solution, you must generate the REST API credentials in case the Client ID and Secret ID.
 
-Para obtê-las siga este passo-a-passo:
+To obtain you follow this step-by-step:
 
-1. Efetuar o login com sua conta PayPal em https://developer.paypal.com e clique no link na parte superior "**Dashboard**";
-2. Clique em "**My Apps & Credentials**";
-3. Abaixo de "**Rest API apps**" clique em "**Create App**";
-4. Em seguida, insira o termo "**ppplus**" no campo "**App Name**" e clique em "**Create App**";
-5. No canto superior direito da tela, clique em "**Live**";
-6. Você deve copiar os códigos que aparecerem em "**Client ID**" e em "**Secret**" (para visualizar o "Secret" será necessário clicar em "**Show**") e colar estes códigos na página de configuração da solução que irá utilizar.
+1. Log in with your PayPal account at https://developer.paypal.com and click on the link at the top "** dashboard **";
+2. Click "** MY Apps & Credentials **";
+3. Beneath "** Rest API Apps **" Click "** Create App **";
+4. Then enter the term "** ppplus **" in the "** app name **" field and click "** Create App **";
+5. In the upper right corner of the screen, click "** Live **";
+6. You must copy the codes that appear in "** Client ID **" and "** Secret **" (To view the "Secret" you need to click "** Show **") and paste these codes On the solution configuration page you use.
 
-### - Campos Personalizados
+### - Custom Fields
 
-Para o Checkout Transparente funcionar corretamente, sua loja precisará ter cadastrado os campos personalizados CPF (tipo Conta) e Número (tipo Endereço).
+For the transparent checkout to work correctly, your store will need to register the Custom CPF (Type Account) and Number (Address Type) fields.
 
-Para cadastrá-los vá ao menu **Clientes→Personalizar cadastro**.
+To register them Go to the ** clients → Customize Register **.
 
-Para cadastrar o campo **CPF**, clique no botão **Novo**, preencha o formulário com as informações abaixo:
+To register the ** cpf ** field, click the ** new button **, fill out the form with the information below:
 
-| Campo | Valor |
+| Field | Value |
 | -------- | ----- |
-| Nome do campo | CPF |
-| Localização | Conta |
-| Tipo de campo | Texto em uma linha |
-| Tipo de cliente | Marque os tipos de clientes que verão o campo durante o cadastro |
-| Tipos obrigatórios | Marque os tipos de clientes que terão o campo como preenchimento obrigatório |
-| Situação | Habilitado |
+| Field Name | CPF |
+| Location | Account |
+| Field type | Text in a line |
+| Type of customer | Mark the types of customers who will see the field during registration |
+| Mandatory types | Mark the types of clients that will have the field as required |
+| Situation | Enabled |
 
-Após preencher o formulário, clique no botão **Salvar**.
+After filling out the form, click the ** Save ** button.
 
-Para cadastrar o campo **Número**, clique no botão **Novo**, preencha o formulário com as informações abaixo:
+To register the field ** number **, click the ** new button **, fill out the form with the information below:
 
-| Campo | Valor |
+| Field | Value |
 | -------- | ----- |
-| Nome do campo | Número |
-| Localização | Endereço |
-| Tipo de campo | Texto em uma linha |
-| Tipo de cliente | Marque os tipos de clientes que verão o durante o cadastro |
-| Tipos obrigatórios | Marque os tipos de clientes que terão o campo como preenchimento obrigatório |
-| Situação | Habilitado |
+| Field Name | Number |
+| Location | Address |
+| Field type | Text in a line |
+| Type of customer | Mark the types of customers who will see you during the registration |
+| Mandatory types | Mark the types of clients that will have the field as required |
+| Situation | Enabled |
 
-Após preencher o formulário, clique no botão **Salvar**.
+After filling out the form, click the ** Save ** button.
 
-## Dúvidas/Suporte
+## Questions / Support
 
-Caso a sua dúvida não tenha sido respondida aqui, entre em contato com o PayPal pelo número 0800 047 4482.
+If your doubt has not been answered here, please contact PayPal at 0800 047 4482.
 
-E caso necessite de algum suporte técnico e/ou acredita ter encontrado algum problema com este módulo, acesse o nosso [portal de suporte técnico](https://www.paypal-support.com/s/?language=pt_BR) e abra um ticket detalhando o seu problema na seção "Fale Conosco".
-
+And if you need some technical support and / or believe you have found some problem with this module, visit our [Technical Support Portal] (https://www.paypal-support.com/s/?Language=pt_Br) and open A ticket detailing your problem in the "Contact Us" section.
 ## Changelog
 
 Para visulizar as últimas atualizações acesse o [**CHANGELOG.md**](CHANGELOG.md).
